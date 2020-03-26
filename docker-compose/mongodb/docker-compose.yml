@@ -1,0 +1,10 @@
+version: "3"
+services:
+  mongo:
+    image: mongo
+    container_name: mongodb
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: otaviolarrosa
+      MONGO_INITDB_ROOT_PASSWORD: Mongo.DB2019!
+    ports:
+      - "27017:27017"

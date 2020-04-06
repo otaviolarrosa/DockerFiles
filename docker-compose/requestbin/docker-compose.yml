@@ -1,8 +1,10 @@
 version: '3'
 services:
   redis:
+    container_name: redis_requestbin
     image: redis
   requestbin:
+    container_name: requestbin
     image: crccheck/requestbin
     # build: .
     depends_on:

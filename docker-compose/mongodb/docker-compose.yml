@@ -5,6 +5,6 @@ services:
     container_name: mongodb
     environment:
       MONGO_INITDB_ROOT_USERNAME: otaviolarrosa
-      MONGO_INITDB_ROOT_PASSWORD: Mongo.DB2019!
+      MONGO_INITDB_ROOT_PASSWORD: Mongo.DB2020!
     ports:
       - "27017:27017"

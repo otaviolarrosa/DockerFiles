@@ -1,0 +1,11 @@
+version: "3.2"
+services:
+
+  sql-server-db:
+    container_name: sqlserver
+    image: mcr.microsoft.com/mssql/server
+    ports:
+      - "1433:1433"
+    environment:
+      SA_PASSWORD: "SQL.Server!2020"
+      ACCEPT_EULA: "Y"

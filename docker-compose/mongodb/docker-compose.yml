@@ -3,6 +3,8 @@ services:
   mongo:
     image: mongo
     container_name: mongodb
+    volumes:
+      - /home/otaviolarrosa/dev/tools/docker_volumes/mongo-db:/data/db
     environment:
       MONGO_INITDB_ROOT_USERNAME: otaviolarrosa
       MONGO_INITDB_ROOT_PASSWORD: Mongo.DB2020!

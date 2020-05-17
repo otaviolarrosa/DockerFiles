@@ -1,0 +1,17 @@
+version: '3.3'
+services:
+  db:
+    image: mysql
+    restart: always
+    container_name: mysql
+    environment:
+      MYSQL_DATABASE: 'db'
+      MYSQL_USER: 'otaviolarrosa'
+      MYSQL_PASSWORD: '!my-sql!2020'
+      MYSQL_ROOT_PASSWORD: 'my!sql!root!'
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
+    volumes:
+      - /home/otaviolarrosa/dev/tools/docker_volumes/mysql:/var/lib/mysql

@@ -15,3 +15,4 @@ services:
       - '3306'
     volumes:
       - /home/otaviolarrosa/dev/tools/docker_volumes/mysql:/var/lib/mysql
+    network_mode: host

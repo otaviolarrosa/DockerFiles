@@ -11,3 +11,4 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: Mongo.DB2020!
     ports:
       - "27017:27017"
+    network_mode: host

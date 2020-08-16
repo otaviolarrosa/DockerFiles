@@ -12,3 +12,4 @@ services:
     ports:
       - "15672:15672"
       - "5672:5672"
+    network_mode: host

@@ -11,6 +11,6 @@ services:
     ports:
       - "5432:5432"
     volumes: 
-        - /home/otaviolarrosa/dev/tools/docker_volumes/postgres:/data/postgres
+        - /c/dev/tools/docker_volumes/postgres:/data/postgres
     network_mode: host
     restart: unless-stopped

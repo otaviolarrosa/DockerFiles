@@ -15,4 +15,3 @@ services:
       # BUGSNAG_KEY
     ports:
       - "1000:80"
-    network_mode: host

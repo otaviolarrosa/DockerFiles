@@ -12,5 +12,4 @@ services:
       - "5432:5432"
     volumes: 
         - /c/dev/tools/docker_volumes/postgres:/data/postgres
-    network_mode: host
     restart: unless-stopped

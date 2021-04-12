@@ -1,11 +1,11 @@
 echo "Creating network for cluster ... "
 sudo docker network create rabbits
 echo "Creating first container ... "
-sudo docker run -d --rm --net rabbits -v ${PWD}/config/rabbit-1/:/config/ -e RABBITMQ_CONFIG_FILE=/config/rabbitmq -e RABBITMQ_ERLANG_COOKIE=REQOXZAYHMVTAAKXYDDU --hostname rabbit-1 --name rabbit-1 -p 8081:15672 rabbitmq:management
+sudo docker run -d --rm --net rabbits -v ${PWD}/config/rabbit-1/:/config/ -e RABBITMQ_CONFIG_FILE=/config/rabbitmq -e RABBITMQ_ERLANG_COOKIE=REQOXZAYHMVTAAKXYDDU --hostname rabbit-1 --name rabbit-1 -p 5671:5672 -p 8081:15672 rabbitmq:management
 echo "Creating second container ... "
-sudo docker run -d --rm --net rabbits -v ${PWD}/config/rabbit-2/:/config/ -e RABBITMQ_CONFIG_FILE=/config/rabbitmq -e RABBITMQ_ERLANG_COOKIE=REQOXZAYHMVTAAKXYDDU --hostname rabbit-2 --name rabbit-2 -p 8082:15672 rabbitmq:management
+sudo docker run -d --rm --net rabbits -v ${PWD}/config/rabbit-2/:/config/ -e RABBITMQ_CONFIG_FILE=/config/rabbitmq -e RABBITMQ_ERLANG_COOKIE=REQOXZAYHMVTAAKXYDDU --hostname rabbit-2 --name rabbit-2 -p 5672:5672 -p 8082:15672 rabbitmq:management
 echo "Creating third container ... "
-sudo docker run -d --rm --net rabbits -v ${PWD}/config/rabbit-3/:/config/ -e RABBITMQ_CONFIG_FILE=/config/rabbitmq -e RABBITMQ_ERLANG_COOKIE=REQOXZAYHMVTAAKXYDDU --hostname rabbit-3 --name rabbit-3 -p 8083:15672 rabbitmq:management
+sudo docker run -d --rm --net rabbits -v ${PWD}/config/rabbit-3/:/config/ -e RABBITMQ_CONFIG_FILE=/config/rabbitmq -e RABBITMQ_ERLANG_COOKIE=REQOXZAYHMVTAAKXYDDU --hostname rabbit-3 --name rabbit-3 -p 5673:5672 -p 8083:15672 rabbitmq:management
 
 echo "enabling shovel plugin in first container ... "
 sudo docker exec -it rabbit-1 rabbitmq-plugins enable rabbitmq_shovel rabbitmq_shovel_management
